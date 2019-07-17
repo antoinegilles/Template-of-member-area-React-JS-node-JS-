@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+  
+  <env>-api-beacon-mongo:
+    image: "37.187.93.167:5001/mongo:3.4.15"
+    deploy:
+      replicas: 1
+    ports:
+      - "27017"
+    volumes:
+      - "<env>_api_beacon_mongo_data:/data"
+    networks: 
+      - <env>
+
+  <env>-api-beacon:
+    image: "37.187.93.167:5001/innovation/api-beacon:<revision_git>"  
+    deploy:
+      replicas: 1
+    links:
+      - <env>-api-beacon-mongo:mongo
+    ports:
+      - "1234:1234"
+    environment:
+      - MONGO_URL=<env>-api-beacon-mongo:27017
+    labels:
+      - "traefik.port=8000"
+      - "traefik.backend=<env>-api-beacon"
+      - "traefik.frontend.rule=PathPrefixStrip: /env>/api-beacon"
+      - "traefik.docker.network=<env>"
+      - "application.name=api-beacon"
+      - "application.version=1.0"
+    networks: 
+      - <env>
+
+networks:
+  <env>:
+    driver: overlay
+    external: true
+    name: <env>
+
+
+volumes:
+  <env>_api_beacon_mongo_data:
+
