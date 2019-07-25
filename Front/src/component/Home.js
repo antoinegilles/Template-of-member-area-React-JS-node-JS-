@@ -11,7 +11,7 @@ export default class Home extends React.Component {
   render() {
     return (
           <div>
-              hello bru
+              hello bru, ici c'est la page d'accueil !
            </div>
     );
   }

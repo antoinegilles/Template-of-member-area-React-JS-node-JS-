@@ -47,11 +47,11 @@ class Inscription extends React.Component {
                       <label className="active" htmlfor="pseudo">Pseudo</label>
                   </div>
                   <div className="input-field col s3">
-                      <input type="text" value={this.state.email} onChange={(e) => this.handleChangeEmail(e)} />
+                      <input type="email" value={this.state.email} onChange={(e) => this.handleChangeEmail(e)} />
                       <label className="active" htmlfor="mail">e-mail</label>
                   </div>
                   <div className="input-field col s3">
-                      <input type="text" value={this.state.password} onChange={(e) => this.handleChangePassword(e)} />
+                      <input type="password" value={this.state.password} onChange={(e) => this.handleChangePassword(e)} />
                       <label className="active" htmlfor="mdp">Mot de Passe</label>
                   </div>
                  <button className="btn waves-effect waves-light blue accent-2" type="submit">Valider</button>

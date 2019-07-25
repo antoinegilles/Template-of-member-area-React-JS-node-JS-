@@ -22,6 +22,8 @@ export default class Navbarre extends React.Component {
                   <a href="/" className="brand-logo">TakeCar</a>
                   <ul id="nav-mobile" className="right hide-on-med-and-down">
                       <li><Link to="/inscription">Inscription</Link></li>
+                      <li><Link to="/connexion">Connexion</Link></li>
+                      <li><Link to="/deconnexion">Deconnexion</Link></li>
                   </ul>
               </div>
           </nav> 
