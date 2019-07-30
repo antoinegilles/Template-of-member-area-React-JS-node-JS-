@@ -1,6 +1,5 @@
 import React from 'react';
 import TodoList from './TodoList';
-import Materialize from "materialize-css";
 
 class LoginHome extends React.Component {
     constructor(props){
@@ -69,9 +68,7 @@ class LoginHome extends React.Component {
         }));
       }
 
-      test(){
-            Materialize.Datepicker.init();
-      }
+
       
     render() {
       return(

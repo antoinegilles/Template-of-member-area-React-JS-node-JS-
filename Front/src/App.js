@@ -5,6 +5,8 @@ import Inscription from './component/Inscription';
 import LoginHome from './component/LoginHome';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './component/Home';
+import Connexion from './component/Connexion';
+import Deconnexion from './component/service/Deconnexion'
 
 class App extends Component {
     constructor(props) {
@@ -20,7 +22,9 @@ class App extends Component {
             <Navbarre></Navbarre>
               <Route exact path="/" component={Home} />
               <Route path="/inscription" component={Inscription} />
+              <Route exact path="/connexion" component={Connexion} />
               <Route path="/loginhome" component={LoginHome} />
+              <Route path="/deconnexion" component={Deconnexion} />
           </Router>
         </div>
       
